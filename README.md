@@ -5,9 +5,13 @@
 ## Splunk with Docker
 ### Links
 https://hub.docker.com/r/splunk/splunk/
+
 https://github.com/splunk/docker-splunk/
+
 https://github.com/splunk/splunk-ansible/
+
 https://www.splunk.com/en_us/blog/cloud/announcing-splunk-on-docker.html
+
 https://www.splunk.com/en_us/blog/tips-and-tricks/hands-on-lab-sandboxing-with-splunk-with-docker.html
 
 ### Command to launch
@@ -26,28 +30,32 @@ splunk@971c580e3076:~$
 All CSV files are available here: https://cadastre.data.gouv.fr/data/etalab-dvf/latest/csv/
 
 ### Import data into Splunk
--> Add Data
--> Upload
--> Select File: 2019-31.csv.gz
--> Next
-Create a source type: csv-etalab
-	Timestamp:
-		Extraction: Advanced
-		Timestamp format: %Y-%m-%d
-		Timestamp fields: date_mutation
-	Advanced:
-		MAX_DAYS_AGO: 10000
--> Next
--> Index: csv-etalab
--> Review
--> Submit
+
+* Add Data
+* Upload
+* Select File: 2019-31.csv.gz
+* Next
+* Create a source type: csv-etalab
+	* Timestamp:
+		* Extraction: Advanced
+		* Timestamp format: %Y-%m-%d
+		* Timestamp fields: date_mutation
+	* Advanced:
+		* MAX_DAYS_AGO: 10000	
+* Next
+* Index: csv-etalab
+* Review
+* Submit
+
 
 ### Install Maps+
+
 Download Maps+ from https://github.com/sghaskell/maps-plus
+
 Install Maps+ on Splunk
--> Apps
--> Install app from file
--> Submit
+* Apps
+* Install app from file
+* Submit
 
 
 ## Search with Maps+
