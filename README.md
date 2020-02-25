@@ -72,6 +72,11 @@ Install Maps+ on Splunk
 
 ## Search with Maps+
 
+### Dashboard
+
+http://127.0.0.1:8000/en-US/app/splunk-etalab-dvf-master/splunketalabdvfdash
+
+### Manual search (with Maps+ visualization)
 ```
 index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN (31700 31840 31820 31770 31880 31830 31170 31270)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
