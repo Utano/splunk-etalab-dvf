@@ -47,7 +47,7 @@ Install Maps+ on Splunk
 
 Search with Maps+:
 
-index="csv-etalab" sourcetype="csv-etalab" longitude="*" latitude="*" code_postal IN (31700 31840 31820 31770 31880 31830 31170 31270)
+index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN (31700 31840 31820 31770 31880 31830 31170 31270)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
 | search surface_eval="*"
 | eval prixm2_eval = valeur_fonciere/surface_eval
