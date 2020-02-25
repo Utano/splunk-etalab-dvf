@@ -67,7 +67,7 @@ All CSV files are available here: https://cadastre.data.gouv.fr/data/etalab-dvf/
 
 ### Install Maps+
 
-Download Maps+ from https://github.com/sghaskell/maps-plus
+Download Maps+ from https://github.com/sghaskell/maps-plus / https://splunkbase.splunk.com/app/3124/
 
 Install Maps+ on Splunk
 * Apps
