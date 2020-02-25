@@ -16,7 +16,7 @@ https://www.splunk.com/en_us/blog/tips-and-tricks/hands-on-lab-sandboxing-with-s
 
 ### Command to launch
 ```
-docker run -d -p 8000:8000 -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=https://github.com/utano/splunk-maps-plus/raw/master/maps-for-splunk_314.tgz,https://github.com/utano/splunk-etalab-dvf/archive/1.0.tar.gz,https://github.com/utano/splunk-etalab-dvf-data/archive/1.0.tar.gz --name splunk splunk/splunk:7.3
+docker run -d -p 8000:8000 -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=https://github.com/utano/splunk-maps-plus/raw/master/maps-for-splunk_314.tgz,https://github.com/utano/splunk-etalab-dvf/archive/master.tar.gz,https://github.com/utano/splunk-etalab-dvf-data/archive/master.tar.gz --name splunk splunk/splunk:7.3
 
 docker exec -it splunk bash
 
