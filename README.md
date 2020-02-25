@@ -40,6 +40,11 @@ $ /bin/bash --init-file ${SPLUNK_HOME}/bin/setSplunkEnv
 splunk@971c580e3076:~$ 
 ```
 
+#### Dashboard
+
+http://127.0.0.1:8000/en-US/app/splunk-etalab-dvf-master/splunketalabdvfdash
+
+
 ## Splunk - Manual way
 
 ### Download CSV data from etalab
@@ -76,10 +81,6 @@ Install Maps+ on Splunk
 
 
 ### Search with Maps+
-
-#### Dashboard
-
-http://127.0.0.1:8000/en-US/app/splunk-etalab-dvf-master/splunketalabdvfdash
 
 #### Manual search (with Maps+ visualization)
 ```
