@@ -1,20 +1,19 @@
 <form theme="light">
   <label>splunk-etalab-dvf-dash</label>
   <fieldset submitButton="true" autoRun="false">
-    <input type="multiselect" token="nom_commune_select">
-      <label>Nom commune</label>
-      <fieldForLabel>commune_eval</fieldForLabel>
-      <fieldForValue>nom_commune</fieldForValue>
+    <input type="multiselect" token="code_postal_select">
+      <label>Code Postal</label>
+      <delimiter> </delimiter>
+      <fieldForLabel>code_postal</fieldForLabel>
+      <fieldForValue>code_postal</fieldForValue>
       <search>
         <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" 
-| table code_postal nom_commune
-| dedup code_postal nom_commune
-| eval commune_eval = coalesce(code_postal,"?")." - ".coalesce(nom_commune,"?")
-| sort commune_eval</query>
+| table code_postal
+| dedup code_postal
+| sort code_postal</query>
         <earliest>0</earliest>
         <latest></latest>
       </search>
-      <delimiter> </delimiter>
     </input>
     <input type="time" token="time_range_select">
       <label>Période</label>
@@ -30,7 +29,7 @@
       <viz type="leaflet_maps_app.maps-plus">
         <title>Maps</title>
         <search>
-          <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" nom_commune IN ($nom_commune_select$)
+          <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN ($code_postal_select$)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
 | search surface_eval="*"
 | eval prixm2_eval = valeur_fonciere/surface_eval
