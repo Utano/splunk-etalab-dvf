@@ -31,7 +31,7 @@ wget https://github.com/utano/splunk-etalab-dvf-data/archive/master.tar.gz -O sp
 docker run -d -p 8000:8000 -v $(pwd):/tmp -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=/tmp/maps-for-splunk_314.tgz,/tmp/splunk-etalab-dvf-master.tar.gz,/tmp/splunk-etalab-dvf-data-master.tar.gz --name splunk splunk/splunk:7.3
 ```
 
-#### Enter into container
+#### Enter into container (Shell)
 ```
 docker exec -it splunk bash
 
@@ -40,7 +40,11 @@ $ /bin/bash --init-file ${SPLUNK_HOME}/bin/setSplunkEnv
 splunk@971c580e3076:~$ 
 ```
 
-#### Dashboard
+#### Access to Splunk
+
+http://127.0.0.1:8000
+
+#### Access to Etalab DVF Dashboard
 
 http://127.0.0.1:8000/en-US/app/splunk-etalab-dvf-master/splunketalabdvfdash
 
