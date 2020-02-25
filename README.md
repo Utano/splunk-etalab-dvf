@@ -1,14 +1,17 @@
 # splunk-etalab-dvf
-Splunk App for Etalab DVF data
 
-Splunk with Docker:
+# Splunk App for Etalab DVF data
+
+## Splunk with Docker
+### Links
 https://hub.docker.com/r/splunk/splunk/
 https://github.com/splunk/docker-splunk/
 https://github.com/splunk/splunk-ansible/
 https://www.splunk.com/en_us/blog/cloud/announcing-splunk-on-docker.html
 https://www.splunk.com/en_us/blog/tips-and-tricks/hands-on-lab-sandboxing-with-splunk-with-docker.html
 
-
+### Command to launch
+```
 docker run -d -p 8000:8000 -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=https://github.com/sghaskell/maps-plus/archive/3.1.4.tar.gz,https://github.com/Utano/splunk-etalab-dvf/archive/1.0.tar.gz,https://github.com/Utano/splunk-etalab-dvf-data/archive/1.0.tar.gz --name splunk splunk/splunk:7.3
 
 docker exec -it splunk bash
@@ -16,12 +19,13 @@ docker exec -it splunk bash
 ansible@971c580e3076:/opt/splunk$ sudo su - splunk
 $ /bin/bash --init-file ${SPLUNK_HOME}/bin/setSplunkEnv
 splunk@971c580e3076:~$ 
+```
 
+## Download CSV data from etalab
 
-Download CSV data from etalab:
 All CSV files are available here: https://cadastre.data.gouv.fr/data/etalab-dvf/latest/csv/
 
-Import data into Splunk:
+### Import data into Splunk
 -> Add Data
 -> Upload
 -> Select File: 2019-31.csv.gz
@@ -38,7 +42,7 @@ Create a source type: csv-etalab
 -> Review
 -> Submit
 
-Install Maps+:
+### Install Maps+
 Download Maps+ from https://github.com/sghaskell/maps-plus
 Install Maps+ on Splunk
 -> Apps
@@ -46,8 +50,9 @@ Install Maps+ on Splunk
 -> Submit
 
 
-Search with Maps+:
+## Search with Maps+
 
+```
 index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN (31700 31840 31820 31770 31880 31830 31170 31270)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
 | search surface_eval="*"
@@ -69,3 +74,4 @@ coalesce(tostring(prixm2_eval,"commas"),"?")." € / m2".
 coalesce(date_mutation,"?").
 "</b>"
 | table latitude longitude description
+```
