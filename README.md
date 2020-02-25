@@ -1,8 +1,8 @@
 # splunk-etalab-dvf
 
-# Splunk App for Etalab DVF data
+Splunk App for Etalab DVF data
 
-## Splunk with Docker
+## Splunk with Docker (automatic way)
 ### Links
 https://hub.docker.com/r/splunk/splunk/
 
@@ -40,7 +40,9 @@ $ /bin/bash --init-file ${SPLUNK_HOME}/bin/setSplunkEnv
 splunk@971c580e3076:~$ 
 ```
 
-## Download CSV data from etalab
+## Splunk - Manual way
+
+### Download CSV data from etalab
 
 All CSV files are available here: https://cadastre.data.gouv.fr/data/etalab-dvf/latest/csv/
 
@@ -73,13 +75,13 @@ Install Maps+ on Splunk
 * Submit
 
 
-## Search with Maps+
+### Search with Maps+
 
-### Dashboard
+#### Dashboard
 
 http://127.0.0.1:8000/en-US/app/splunk-etalab-dvf-master/splunketalabdvfdash
 
-### Manual search (with Maps+ visualization)
+#### Manual search (with Maps+ visualization)
 ```
 index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN (31700 31840 31820 31770 31880 31830 31170 31270)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
