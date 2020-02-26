@@ -28,7 +28,7 @@ wget https://github.com/utano/splunk-etalab-dvf/archive/master.tar.gz -O splunk-
 wget https://github.com/utano/splunk-etalab-dvf-data/archive/master.tar.gz -O splunk-etalab-dvf-data-master.tar.gz
 
 # Then, launch Docker container
-docker run -d -p 8000:8000 -v $(pwd):/tmp -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=/tmp/maps-for-splunk_314.tgz,/tmp/splunk-etalab-dvf-master.tar.gz,/tmp/splunk-etalab-dvf-data-master.tar.gz --name splunk splunk/splunk:7.3
+docker run -d -p 8000:8000 -v $(pwd):/docker-mount -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=torototo -e SPLUNK_APPS_URL=/docker-mount/maps-for-splunk_314.tgz,/docker-mount/splunk-etalab-dvf-master.tar.gz,/docker-mount/splunk-etalab-dvf-data-master.tar.gz --name splunk splunk/splunk:7.3
 ```
 
 #### Enter into container (Shell)
