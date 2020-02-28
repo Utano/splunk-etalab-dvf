@@ -2,8 +2,18 @@
 
 Splunk App for Etalab DVF data
 
-## Splunk with Docker (automatic way)
-### Links
+## Links
+### Etalab DVF
+
+https://app.dvf.etalab.gouv.fr/
+
+https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/
+
+https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
+
+https://cadastre.data.gouv.fr/data/etalab-dvf/latest/csv/
+
+### Splunk on Docker
 https://hub.docker.com/r/splunk/splunk/
 
 https://github.com/splunk/docker-splunk/
@@ -14,6 +24,7 @@ https://www.splunk.com/en_us/blog/cloud/announcing-splunk-on-docker.html
 
 https://www.splunk.com/en_us/blog/tips-and-tricks/hands-on-lab-sandboxing-with-splunk-with-docker.html
 
+## Splunk with Docker (automatic way)
 ### Launch Docker container
 #### Online mode (with Internet into container)
 ```
