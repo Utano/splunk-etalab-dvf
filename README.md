@@ -7,6 +7,8 @@ Splunk App for Etalab DVF data
 
 https://app.dvf.etalab.gouv.fr/
 
+https://app.dvf.etalab.gouv.fr/faq.html
+
 https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/
 
 https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
