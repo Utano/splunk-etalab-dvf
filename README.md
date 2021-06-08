@@ -13,7 +13,7 @@ https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/
 
 https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/
 
-https://cadastre.data.gouv.fr/data/etalab-dvf/latest/csv/
+https://files.data.gouv.fr/geo-dvf/latest/csv/
 
 ### Splunk on Docker
 https://hub.docker.com/r/splunk/splunk/
