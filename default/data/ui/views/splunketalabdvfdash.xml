@@ -11,6 +11,28 @@
       <default>*</default>
       <initialValue>*</initialValue>
     </input>
+    <input type="dropdown" token="nature_mutation_select" searchWhenChanged="false">
+      <label>Nature mutation</label>
+      <default>*</default>
+      <fieldForLabel>nature_mutation</fieldForLabel>
+      <fieldForValue>nature_mutation</fieldForValue>
+      <search>
+        <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" | table nature_mutation | dedup nature_mutation</query>
+      </search>
+      <choice value="*">*</choice>
+      <initialValue>*</initialValue>
+    </input>
+    <input type="dropdown" token="type_local_select">
+      <label>Type bien</label>
+      <default>*</default>
+      <initialValue>*</initialValue>
+      <fieldForLabel>type_local</fieldForLabel>
+      <fieldForValue>type_local</fieldForValue>
+      <search>
+        <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" | table type_local | dedup type_local</query>
+      </search>
+      <choice value="*">*</choice>
+    </input>
     <input type="time" token="time_range_select">
       <label>Période</label>
       <default>
@@ -24,7 +46,7 @@
       <viz type="leaflet_maps_app.maps-plus">
         <title>Etalab DVF Map</title>
         <search>
-          <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN ($code_postal_select$) nom_commune IN ($nom_commune_select$)
+          <query>index="csv-etalab-dvf" sourcetype="csv-etalab-dvf" longitude="*" latitude="*" code_postal IN ($code_postal_select$) nom_commune IN ($nom_commune_select$) nature_mutation IN ($nature_mutation_select$) type_local IN ($type_local_select$)
 | eval surface_eval = coalesce(surface_reelle_bati,surface_terrain) 
 | search surface_eval="*"
 | eval prixm2_eval = valeur_fonciere/surface_eval
